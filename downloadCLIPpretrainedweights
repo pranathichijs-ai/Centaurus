@@ -1,0 +1,4 @@
+pip install open_clip_torch
+
+import open_clip
+clip_model, _, preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrained='openai')
