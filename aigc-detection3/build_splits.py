@@ -14,3 +14,13 @@ train_paths, val_paths, train_labels, val_labels = train_test_split(
 )
 
 print(f"Train: {len(train_paths)} images, Val: {len(val_paths)} images")
+
+
+
+sid_paths_raw = glob.glob("data/sid_set/*.png")
+sid_labels_raw = [int(p.split("label")[1].split(".")[0]) for p in sid_paths_raw]
+
+sid_paths = [p for p, l in zip(sid_paths_raw, sid_labels_raw) if l in (0, 1)]
+sid_labels = [l for l in sid_labels_raw if l in (0, 1)]
+
+print(f"Kept {len(sid_paths)} SID_Set images (real: {sid_labels.count(0)}, fake: {sid_labels.count(1)}), dropped {len(sid_paths_raw) - len(sid_paths)} tampered images")
