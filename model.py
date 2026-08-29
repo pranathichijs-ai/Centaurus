@@ -88,6 +88,8 @@ with open('/content/Centaurus/aigc-detection3/train_splits.json') as f:
 train_paths = [p.replace("\\", "/") for p in train_paths]
 
 train_dataset = ImageDataset(train_paths, train_labels, transform=preprocess)
+from torch.utils.data import DataLoader
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 
 import zipfile
 
