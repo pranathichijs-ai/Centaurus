@@ -1,11 +1,11 @@
 # demo_augmentation.py
-# Show augmentation working on a sample image (for video)
+# Show augmentation working on a sample image - record this for your video
 
-import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 from augmentations import get_train_augmentation, get_test_conditions
+import os
 
 def demo_augmentation(image_path, output_path="demo_output.png"):
     """Show original + all augmentations side by side"""
@@ -58,9 +58,43 @@ def demo_augmentation(image_path, output_path="demo_output.png"):
     
     plt.tight_layout()
     plt.savefig(output_path, dpi=150, bbox_inches='tight')
+    print(f"Demo image saved to {output_path}")
     plt.show()
-    print(f"Demo saved to {output_path}")
+
+
+def find_test_image():
+    """Find any image in the project"""
+    # Check common locations
+    locations = [
+        "sample_images",
+        "train/REAL",
+        "train/FAKE", 
+        "."
+    ]
+    
+    for location in locations:
+        if os.path.exists(location):
+            for f in os.listdir(location):
+                if f.endswith(('.jpg', '.jpeg', '.png')):
+                    return os.path.join(location, f)
+    return None
 
 if __name__ == "__main__":
-    # Use any image you have
-    demo_augmentation("sample_images/test_0.jpg")
+    # Try to find any test image
+    test_image = None
+    
+    # Check if user provided an image
+    import sys
+    if len(sys.argv) > 1:
+        test_image = sys.argv[1]
+    else:
+        test_image = find_test_image()
+    
+    if test_image is None:
+        print("No test image found!")
+        print("Usage: python demo_augmentation.py [path_to_image]")
+        print("Or copy an image to sample_images/")
+        exit()
+    
+    print(f"📷 Using image: {test_image}")
+    demo_augmentation(test_image)
