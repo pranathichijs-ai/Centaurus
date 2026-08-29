@@ -102,3 +102,15 @@ run_inference('/content/data/cifake/train/REAL', '/content/test_output.json', mo
 import os; print(os.path.exists('/content/test_output.json'))
 
 import json; print(json.load(open('/content/test_output.json'))[:3]) #see the first few predictions. If you see real numbers between 0 and 1 next to file paths, it worked correctly.
+
+optimizer = torch.optim.Adam(model.head.parameters(), lr=1e-4)
+loss_fn = nn.BCEWithLogitsLoss()
+for epoch in range(5):
+    for images, labels in train_loader:
+        images, labels = images.cuda(), labels.float().cuda()
+        optimizer.zero_grad()
+        preds = model(images)
+        loss = loss_fn(preds, labels)
+        loss.backward()
+        optimizer.step()
+    print(f"Epoch {epoch}, loss: {loss.item()}")
