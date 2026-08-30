@@ -25,7 +25,7 @@ wildfake_labels = [0]*len(real_wildfake_paths) + [1]*len(fake_wildfake_paths)
 
 print(f"Final wildfake_paths: {len(wildfake_paths)}")
 print(f"Final wildfake_labels: {len(wildfake_labels)}")
-
+wildfake_paths = [p.replace("\\", "/") for p in wildfake_paths]
 # Save for handoff, same pattern as train_splits.json
 with open("wildfake_splits.json", "w") as f:
     json.dump({"wildfake_paths": wildfake_paths, "wildfake_labels": wildfake_labels}, f)
