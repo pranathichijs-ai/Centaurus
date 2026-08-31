@@ -4,7 +4,7 @@
 
 import torch
 from torch.utils.data import DataLoader
-from augmentations import get_train_augmentation
+from transforms.transforms import get_train_augmentation
 from dataset import ImageDataset
 import json
 
