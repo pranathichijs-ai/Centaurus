@@ -77,7 +77,11 @@ data/
    python train/train_integration.py
    ```
 4. Train the model — run in Google Colab (no standalone local training script; this is the exact sequence used): load and freeze CLIP → define the `FakeDetector` classifier head → build `train_loader` from `data/train_splits.json` (CIFAKE+SID_Set combined) → train 5 epochs → save `model_plain.pt` → rebuild the loader using C's `get_train_augmentation()` as the transform → train 5 more epochs → save `model_augmented.pt`. Full notebook: https://colab.research.google.com/drive/1dGEZukDrf7H1MLLpU34JwPIOWLmeDAGy?usp=sharing
-5. Evaluate — `evaluate(model, val_loader)` (in `eval/evaluate.py`) returns `(accuracy, auc)` using `eval/scoring.py`'s `compute_metrics()`; call this from inside the training/eval script with a real model and `val_loader` built from `val_splits.json`.
+5. Evaluate — `evaluate(model, val_loader)` (in `eval/evaluate.py`) returns `(accuracy, auc)` using `eval/scoring.py`'s `compute_metrics()`; call this from inside the training/eval script with a real model and `val_loader` built from `val_splits.json`. To test `evaluate.py` standalone (e.g. its built-in smoke test), run it as a module, **not** as a direct file path:
+   ```bash
+   python -m eval.evaluate
+   ```
+   > Running `python eval/evaluate.py` directly will fail with `ModuleNotFoundError: No module named 'eval'` — this is because `evaluate.py` uses a package-style import (`from eval.scoring import compute_metrics`), which only resolves correctly when Python treats `eval` as a package relative to the project root. The `-m` flag does this correctly; running the file path directly does not.
 6. Robustness evaluation (clean vs. transformed conditions) — fill in model paths, then run:
    ```bash
    python run_robustness_table.py
@@ -176,5 +180,4 @@ Full results: `wildfake_error_analysis.json`, `complete_error_analysis.json`. CI
 | D (pranathi) | Shared scoring infrastructure; locked test-condition parameters; robustness results compilation; combined error analysis; Devpost writeup coordination |
 
 ## Demo Video
-[Demo Video](https://youtu.be/dxHURhy99_g)
-
+<!-- WAITING ON D — YouTube link, after all clips are compiled -->
