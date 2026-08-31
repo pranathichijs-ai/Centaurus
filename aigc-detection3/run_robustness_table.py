@@ -5,7 +5,7 @@ import torch
 from torch.utils.data import DataLoader
 import json
 import os
-from augmentations import get_test_conditions
+from transforms.transforms import get_test_conditions
 from PIL import Image
 import numpy as np
 
