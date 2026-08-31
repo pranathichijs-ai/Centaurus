@@ -12,7 +12,7 @@
 from torch.utils.data import Dataset
 from PIL import Image
 import numpy as np
-from data.dataset import ImageDataset
+
 
 class ImageDataset(Dataset):
     """
