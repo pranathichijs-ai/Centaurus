@@ -105,4 +105,5 @@ python run_robustness_table.py
 | D (pranathi) | Coordination, evaluation metrics, Devpost compilation |
 
 ## Demo Video
-<!-- WAITING ON D — YouTube link, after all clips are compiled -->
+[Demo Video](https://youtu.be/dxHURhy99_g)
+
