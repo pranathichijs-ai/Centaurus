@@ -1,0 +1,10 @@
+{
+  "plain": {
+    "accuracy": 50.62,
+    "auc": 0.5091
+  },
+  "augmented": {
+    "accuracy": 52.58,
+    "auc": 0.5442
+  }
+}

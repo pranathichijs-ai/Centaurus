@@ -1,0 +1,46 @@
+{
+  "plain": {
+    "Clean": {
+      "accuracy": 87.25,
+      "auc": 0.9528
+    },
+    "JPEG_q30": {
+      "accuracy": 86.36,
+      "auc": 0.9388
+    },
+    "Blur_sigma_2": {
+      "accuracy": 89.69,
+      "auc": 0.9675
+    },
+    "Crop_80": {
+      "accuracy": 85.1,
+      "auc": 0.9442
+    },
+    "WildFake": {
+      "accuracy": 50.62,
+      "auc": 0.5091
+    }
+  },
+  "augmented": {
+    "Clean": {
+      "accuracy": 90.52,
+      "auc": 0.9691
+    },
+    "JPEG_q30": {
+      "accuracy": 88.65,
+      "auc": 0.956
+    },
+    "Blur_sigma_2": {
+      "accuracy": 90.95,
+      "auc": 0.9689
+    },
+    "Crop_80": {
+      "accuracy": 88.93,
+      "auc": 0.9595
+    },
+    "WildFake": {
+      "accuracy": 52.58,
+      "auc": 0.5442
+    }
+  }
+}
