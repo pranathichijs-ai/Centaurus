@@ -6,9 +6,14 @@
 # Original file is located at
 #     https://colab.research.google.com/drive/1dGEZukDrf7H1MLLpU34JwPIOWLmeDAGy
 # """
-# # NOTE: Exported from Colab. Contains personal Google Drive paths
-# # (/content/drive/MyDrive/...) specific to the author's environment —
-# # adjust these paths if running in your own Colab session.
+# # NOTE: Exported from a Colab notebook and flattened into a single .py file
+# for reference/documentation purposes — it is NOT directly executable as-is.
+# Lines starting with "!" are Colab notebook-cell magic commands (pip
+# installs, shell commands) and will cause a SyntaxError if run as a
+# plain script, even inside Colab. To actually run this, use the live
+# notebook instead: https://colab.research.google.com/drive/1dGEZukDrf7H1MLLpU34JwPIOWLmeDAGy
+# Also contains personal Google Drive paths (/content/drive/MyDrive/...)
+# specific to the author's environment.
 
 # import torch
 # import torch.nn as nn
