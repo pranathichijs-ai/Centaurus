@@ -196,4 +196,4 @@ Full results: `wildfake_error_analysis.json`, `complete_error_analysis.json`. CI
 | D (pranathi) | Shared scoring infrastructure; locked test-condition parameters; robustness results compilation; combined error analysis; Devpost writeup coordination |
 
 ## Demo Video
-https://youtu.be/dxHURhy99_g
+https://youtu.be/LrPmf5uXT50
