@@ -191,9 +191,9 @@ Full results: `wildfake_error_analysis.json`, `complete_error_analysis.json`. CI
 | Member | Contribution |
 |---|---|
 | A (Jeny) | Dataset acquisition and preprocessing (CIFAKE, SID_Set, WildFake); data-loading pipeline; train/val/test split generation; bug fixes (cross-platform paths, dataset merge); dataset-source error analysis; README |
-| B (darsini) | Model architecture (CLIP ViT-B/32 + linear classifier head); training both plain and augmented models; inference script; confidence-based error analysis |
-| C (camelia) | Augmentation pipeline (Albumentations); robustness evaluation across fixed-intensity test conditions; transform-type error analysis |
-| D (pranathi) | Shared scoring infrastructure; locked test-condition parameters; robustness results compilation; combined error analysis; Devpost writeup coordination |
+| B (Camelia) | Model architecture (CLIP ViT-B/32 + linear classifier head); training both plain and augmented models; inference script; confidence-based error analysis |
+| C (Darsini) | Augmentation pipeline (Albumentations); robustness evaluation across fixed-intensity test conditions; transform-type error analysis |
+| D (Pranathi) | Shared scoring infrastructure; locked test-condition parameters; robustness results compilation; combined error analysis; Devpost writeup coordination |
 
 ## Demo Video
 https://youtu.be/dxHURhy99_g
