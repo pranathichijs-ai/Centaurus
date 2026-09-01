@@ -24,4 +24,7 @@ Only marginally. On WildFake (a generator and real-image source never seen durin
 Generalization to unseen generators, not robustness to standard transformations. The model handles JPEG compression, blur, and cropping well — the real limitation is unseen-generator generalization, a known hard problem in AI-detection research broadly, not specific to this pipeline.
 
 ## Visualization
-A bar chart comparing plain vs. augmented across all conditions is available (see project README / Devpost submission).
+See `robustness_chart.png` (or the project README / Devpost submission) for a bar chart comparing plain vs. augmented model performance across all five conditions.
+
+## Full Data
+Complete per-image results: `robustness_results.json`, `wildfake_results.json` — see the Error Analysis Note (`eval/error_analysis_note.md`) for confidence-level breakdowns and misclassified examples.
